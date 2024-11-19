@@ -1,6 +1,7 @@
 pipeline {
     environment {
-        DOCKERHUB_CRED = credentials("DockerCredentials")
+        DOCKERHUB_CRED = credentials("Ansh-Docker-Credentials")
+        PATH = "/opt/homebrew/bin:$PATH"
     }
     agent any
     tools {nodejs "NODEJS"} 
@@ -11,7 +12,7 @@ pipeline {
                 // rm -rf SPE-FInal-Project
                 // git clone https://github.com/AnshAviKhanna/PlateMate.git
                 // '''
-                git credentialsId: 'GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
+                git credentialsId: 'Ansh-GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
             }
         }
 
