@@ -7,8 +7,15 @@ const path = require('path');
 const MultiArmBandit = require('./models/multiArmBandit');
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+
+const corsOptions = {
+  origin:'http://localhost:3000/',
+  credentials:true
+}
+
+app.use(cors(corsOptions));
 
 // Modified loadCSV function to work with mocked filesystem
 function loadCSV(filePath) {

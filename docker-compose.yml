@@ -1,6 +1,6 @@
 services:
   server:
-    image: anshavikhanna/backend:latest
+    image: anshavikhanna/platemate-backend:latest
     container_name: myapp-node-server
     ports:
       - "5001:5001"
@@ -16,7 +16,7 @@ services:
       - 8.8.8.8  # Use Google's public DNS to ensure proper DNS resolution
 
   client:
-    image: anshavikhanna/frontend:latest
+    image: anshavikhanna/platemate-frontend:latest
     container_name: myapp-react-client
     ports:
       - "3000:3000"
