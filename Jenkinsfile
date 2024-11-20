@@ -11,8 +11,8 @@ pipeline {
                 sh '''
                 rm -rf PlateMate
                 git clone https://github.com/AnshAviKhanna/PlateMate.git
-                git credentialsId: 'Ansh-GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
                 '''
+                // git credentialsId: 'Ansh-GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
             }
         }
 
