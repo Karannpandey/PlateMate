@@ -43,7 +43,7 @@ pipeline {
                 sh '''
                 cd frontend
                 ls
-                /usr/local/bin/docker build -t platemate-frontend:latest .
+                /usr/local/bin/docker build -t anshavikhanna/platemate-frontend:latest .
                 '''
             }
         }
@@ -52,7 +52,7 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                /usr/local/bin/docker build -t platemate-backend:latest .
+                /usr/local/bin/docker build -t anshavikhanna/platemate-backend:latest .
                 '''
             }
         }
