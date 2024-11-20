@@ -8,11 +8,11 @@ pipeline {
     stages {
         stage("Stage 1: Git Clone") {
             steps {
-                // sh '''
-                // rm -rf SPE-FInal-Project
-                // git clone https://github.com/AnshAviKhanna/PlateMate.git
-                // '''
+                sh '''
+                rm -rf PlateMate
+                git clone https://github.com/AnshAviKhanna/PlateMate.git
                 git credentialsId: 'Ansh-GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
+                '''
             }
         }
 
@@ -21,6 +21,7 @@ pipeline {
                 sh '''
                 cd backend
                 npm install
+                npm i cors
                 npm install jest --save-dev
                 npm test
                 '''
