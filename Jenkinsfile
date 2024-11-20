@@ -43,7 +43,7 @@ pipeline {
                 sh '''
                 cd frontend
                 ls
-                /usr/local/bin/docker build -t anshavikhanna/frontend:latest .
+                /usr/local/bin/docker build -t platemate-frontend:latest .
                 '''
             }
         }
@@ -52,7 +52,7 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                /usr/local/bin/docker build -t anshavikhanna/backend:latest .
+                /usr/local/bin/docker build -t platemate-backend:latest .
                 '''
             }
         }
@@ -61,7 +61,7 @@ pipeline {
             steps {
                 sh '''
                 /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push anshavikhanna/frontend:latest
+                /usr/local/bin/docker push platemate/frontend:latest
                 '''
             }
         }
@@ -70,7 +70,7 @@ pipeline {
             steps {
                 sh '''
                 /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push anshavikhanna/backend:latest
+                /usr/local/bin/docker push platemate/backend:latest
                 '''
             }
         }
