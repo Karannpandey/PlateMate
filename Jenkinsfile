@@ -61,7 +61,7 @@ pipeline {
             steps {
                 sh '''
                 /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push platemate-frontend:latest
+                /usr/local/bin/docker push anshavikhanna/platemate-frontend:latest
                 '''
             }
         }
@@ -70,7 +70,7 @@ pipeline {
             steps {
                 sh '''
                 /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push platemate-backend:latest
+                /usr/local/bin/docker push anshavikhanna/platemate-backend:latest
                 '''
             }
         }
