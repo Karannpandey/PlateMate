@@ -10,10 +10,34 @@ const app = express();
 // app.use(cors());
 app.use(express.json());
 
+// const corsOptions = {
+//   origin:'http://localhost:3000',
+//   credentials:true
+// }
+
+// app.use(cors(corsOptions));
+
 const corsOptions = {
-  origin:'http://localhost:3000/',
-  credentials:true
-}
+  // origin: ['http://localhost:3000', 'http://frontend:3000'],
+  origin: ['http://192.168.49.2:30008', 'http://frontend:30008'],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+// const corsOptions = {
+//   origin: [
+//     'http://localhost:3000', 
+//     'http://localhost:30008', 
+//     'http://my-react-app-service', 
+//     'http://my-node-backend-service'
+//   ],
+//   credentials: true,
+//   methods: ['GET', 'POST', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// };
+
+
 
 app.use(cors(corsOptions));
 
@@ -77,6 +101,7 @@ async function initializeData() {
 if (process.env.NODE_ENV !== 'test') {
   initializeData().then(() => {
     const PORT = 5001;
+    // const PORT = 8000;
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   });
 }

@@ -12,11 +12,17 @@ function App() {
   const [nameInput, setNameInput] = useState('');
 
   const initializeUser = async (selectedGoal) => {
-    const response = await fetch('http://localhost:5001/api/initialize', {
+    // const response = await fetch('http://localhost:8000/api/initialize', {
+    const response = await fetch('http://192.168.49.2:30007/api/initialize', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId, goal: selectedGoal }),
     });
+    // const response = await fetch('/api/initialize', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ userId, goal: selectedGoal }),
+    // });
     if (response.ok) {
       setGoal(selectedGoal);
       setIsInitialized(true);
@@ -25,7 +31,8 @@ function App() {
   };
 
   const fetchMealPlan = async (currentGoal) => {
-    const response = await fetch('http://localhost:5001/api/getMealPlan', {
+    // const response = await fetch('http://localhost:5001/api/getMealPlan', {
+    const response = await fetch('http://192.168.49.2:30007/api/getMealPlan', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId, goal: currentGoal }),
@@ -35,7 +42,8 @@ function App() {
   };
 
   const handleRatingSubmit = async (ratings) => {
-    const response = await fetch('http://localhost:5001/api/updateRatings', {
+    // const response = await fetch('http://localhost:5001/api/updateRatings', {
+    const response = await fetch('http://192.168.49.2:30007/api/updateRatings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId, ratings }),

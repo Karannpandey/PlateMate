@@ -54,12 +54,14 @@ describe('Meal Planner App', () => {
     // Mock successful API responses
     fetch.mockImplementation((url) => {
       switch (url) {
-        case 'http://localhost:5001/api/initialize':
+        // case 'http://localhost:5001/api/initialize':
+        case 'http://192.168.49.2:30007/api/initialize':
           return Promise.resolve({
             ok: true,
             json: () => Promise.resolve({}),
           });
-        case 'http://localhost:5001/api/getMealPlan':
+        // case 'http://localhost:5001/api/getMealPlan':
+        case 'http://192.168.49.2:30007/api/getMealPlan':
           return Promise.resolve({
             ok: true,
             json: () => Promise.resolve({
@@ -93,8 +95,10 @@ describe('Meal Planner App', () => {
     // Mock API responses for initialization, meal plan, and ratings update
     fetch.mockImplementation((url, options) => {
       switch (url) {
-        case 'http://localhost:5001/api/initialize':
-        case 'http://localhost:5001/api/getMealPlan':
+        // case 'http://localhost:5001/api/initialize':
+        case 'http://192.168.49.2:30007/api/initialize':
+        // case 'http://localhost:5001/api/getMealPlan':
+        case 'http://192.168.49.2:30007/api/getMealPlan':
           return Promise.resolve({
             ok: true,
             json: () => Promise.resolve({
@@ -103,7 +107,8 @@ describe('Meal Planner App', () => {
               dinner: { recipe: 'Salmon with Quinoa', cluster: 3 },
             }),
           });
-        case 'http://localhost:5001/api/updateRatings':
+        // case 'http://localhost:5001/api/updateRatings':
+        case 'http://192.168.49.2:30007/api/updateRatings':
           const body = JSON.parse(options.body);
           expect(body.ratings.breakfast.rating).toBeGreaterThanOrEqual(0);
           expect(body.ratings.breakfast.rating).toBeLessThanOrEqual(5);
