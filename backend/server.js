@@ -5,10 +5,17 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
 const MultiArmBandit = require('./models/multiArmBandit');
+const logger = require('./logger.js');
+const morgan = require('morgan');
+// import logger from "./logger.js";
+// import morgan from "morgan";
+
+const morganFormat = ":method :url :status :response-time ms";
 
 const app = express();
 // app.use(cors());
 app.use(express.json());
+
 
 // const corsOptions = {
 //   origin:'http://localhost:3000',
@@ -18,8 +25,8 @@ app.use(express.json());
 // app.use(cors(corsOptions));
 
 const corsOptions = {
-  // origin: ['http://localhost:3000', 'http://frontend:3000'],
-  origin: ['http://192.168.49.2:30008', 'http://frontend:30008'],
+  origin: ['http://localhost:3000', 'http://frontend:3000'],
+  // origin: ['http://192.168.49.2:30008', 'http://frontend:30008'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -41,18 +48,43 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.use(
+  morgan(morganFormat, {
+    stream: {
+      write: (message) => {
+        const logObject = {
+          method: message.split(" ")[0],
+          url: message.split(" ")[1],
+          status: message.split(" ")[2],
+          responseTime: message.split(" ")[3],
+        };
+        logger.info(JSON.stringify(logObject));
+      },
+    },
+  })
+);
+
 // Modified loadCSV function to work with mocked filesystem
 function loadCSV(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
+    // const mockData = [
+    //   { Name: 'Oatmeal', Cluster: '0' },
+    //   { Name: 'Pancakes', Cluster: '1' },
+    //   { Name: 'Salad', Cluster: '0' },
+    //   { Name: 'Sandwich', Cluster: '1' },
+    //   { Name: 'Pasta', Cluster: '0' },
+    //   { Name: 'Steak', Cluster: '1' }
+    // ];
     const mockData = [
-      { Name: 'Oatmeal', Cluster: '0' },
-      { Name: 'Pancakes', Cluster: '1' },
-      { Name: 'Salad', Cluster: '0' },
-      { Name: 'Sandwich', Cluster: '1' },
-      { Name: 'Pasta', Cluster: '0' },
-      { Name: 'Steak', Cluster: '1' }
+      { Name: 'Oatmeal', Cluster: '0', URL: 'https://www.allrecipes.com/' },
+      { Name: 'Pancakes', Cluster: '1', URL: 'https://www.allrecipes.com/' },
+      { Name: 'Salad', Cluster: '0', URL: 'https://www.allrecipes.com/' },
+      { Name: 'Sandwich', Cluster: '1', URL: 'https://www.allrecipes.com/' },
+      { Name: 'Pasta', Cluster: '0', URL: 'https://www.allrecipes.com/' },
+      { Name: 'Steak', Cluster: '1', URL: 'https://www.allrecipes.com/' }
     ];
+    
     
     // In test environment, return mock data
     if (process.env.NODE_ENV === 'test') {
@@ -146,26 +178,57 @@ app.post('/api/getMealPlan', (req, res) => {
   const dinnerData = dataFrames.get(`${prefix}_dinner_df.csv`);
 
   function getRandomRecipe(data, cluster) {
+    // Filter data by the cluster value
     const clusterData = data.filter(row => row.Cluster.toString() === cluster.toString());
+    
+    // Select a random recipe from the filtered data
     const randomIndex = Math.floor(Math.random() * clusterData.length);
-    return clusterData[randomIndex].Name;
+    
+    // Get the Name and URL corresponding to the randomly selected recipe
+    const recipe = clusterData[randomIndex];
+    return {
+      name: recipe.Name,  // Recipe Name
+      url: recipe.URL     // URL corresponding to the recipe
+    };
   }
+  
 
   const breakfastCluster = breakfastBandit.choose_arm();
   const lunchCluster = lunchBandit.choose_arm();
   const dinnerCluster = dinnerBandit.choose_arm();
 
+  const breakfastRecipe = getRandomRecipe(breakfastData, breakfastCluster);
+  const lunchRecipe = getRandomRecipe(lunchData, lunchCluster);
+  const dinnerRecipe = getRandomRecipe(dinnerData, dinnerCluster);
+
+  // const mealPlan = {
+  //   breakfast: {
+  //     recipe: getRandomRecipe(breakfastData, breakfastCluster),
+  //     cluster: breakfastCluster
+  //   },
+  //   lunch: {
+  //     recipe: getRandomRecipe(lunchData, lunchCluster),
+  //     cluster: lunchCluster
+  //   },
+  //   dinner: {
+  //     recipe: getRandomRecipe(dinnerData, dinnerCluster),
+  //     cluster: dinnerCluster
+  //   }
+  // };
   const mealPlan = {
     breakfast: {
-      recipe: getRandomRecipe(breakfastData, breakfastCluster),
+      name: breakfastRecipe.name,
+      url: breakfastRecipe.url,
       cluster: breakfastCluster
     },
     lunch: {
-      recipe: getRandomRecipe(lunchData, lunchCluster),
+      name: lunchRecipe.name,
+      url: lunchRecipe.url,
       cluster: lunchCluster
     },
     dinner: {
-      recipe: getRandomRecipe(dinnerData, dinnerCluster),
+      name: dinnerRecipe.name,
+      url: dinnerRecipe.url,
       cluster: dinnerCluster
     }
   };
