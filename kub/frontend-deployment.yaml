@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-react-app
-          image: anshavikhanna/platemate-frontend:latest
+          image: krp277/platemate-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

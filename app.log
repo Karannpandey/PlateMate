@@ -1,0 +1,36 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T11:22:03.443Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T11:22:03.592Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T11:28:42.241Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T11:28:42.602Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"15.366\"}","timestamp":"2024-12-09T11:29:29.627Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"8.362\"}","timestamp":"2024-12-09T11:31:00.414Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"17.825\"}","timestamp":"2024-12-09T11:31:25.383Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.237\"}","timestamp":"2024-12-09T11:31:25.388Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.923\"}","timestamp":"2024-12-09T11:31:25.400Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.683\"}","timestamp":"2024-12-09T11:31:25.414Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/updateRatings\",\"status\":\"200\",\"responseTime\":\"191.400\"}","timestamp":"2024-12-09T11:31:39.297Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.891\"}","timestamp":"2024-12-09T11:31:39.364Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"5.192\"}","timestamp":"2024-12-09T11:32:43.967Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"5.747\"}","timestamp":"2024-12-09T11:35:53.983Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T11:40:57.513Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T11:40:57.840Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"10.420\"}","timestamp":"2024-12-09T11:41:14.279Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"31.965\"}","timestamp":"2024-12-09T11:52:48.218Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T11:54:43.422Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T11:54:43.661Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"472.859\"}","timestamp":"2024-12-09T11:57:23.630Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"9.670\"}","timestamp":"2024-12-09T11:58:08.942Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T13:04:42.703Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T13:04:42.873Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"8.507\"}","timestamp":"2024-12-09T13:05:01.327Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.149\"}","timestamp":"2024-12-09T13:05:01.333Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"1.416\"}","timestamp":"2024-12-09T13:05:01.373Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"1.237\"}","timestamp":"2024-12-09T13:05:01.381Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"4.076\"}","timestamp":"2024-12-09T13:05:19.752Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"1.041\"}","timestamp":"2024-12-09T13:05:22.858Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.606\"}","timestamp":"2024-12-09T13:05:24.050Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.621\"}","timestamp":"2024-12-09T13:10:14.088Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.209\"}","timestamp":"2024-12-09T13:10:34.418Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"1.106\"}","timestamp":"2024-12-09T13:11:06.190Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.465\"}","timestamp":"2024-12-09T13:11:07.497Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"0.585\"}","timestamp":"2024-12-09T13:11:12.080Z"}

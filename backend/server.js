@@ -26,8 +26,8 @@ app.use(express.json());
 // app.use(cors(corsOptions));
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://frontend:3000'],
-  // origin: ['http://192.168.49.2:30008', 'http://frontend:30008'],
+  // origin: ['http://localhost:3000', 'http://frontend:3000'],
+  origin: ['http://192.168.49.2:30008', 'http://frontend:30008'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

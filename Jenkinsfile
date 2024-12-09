@@ -1,20 +1,17 @@
-pipeline {
-    environment {
-        DOCKERHUB_CRED = credentials("Ansh-Docker-Credentials")
-        PATH = "/opt/homebrew/bin:$PATH"
+pipeline{
+    environment{
+        DOCKERHUB_CRED = credentials("DockerKaran")
     }
     agent any
-    tools {nodejs "NODEJS"} 
-    stages {
-        stage("Stage 1: Git Clone") {
+    stages{
+        stage("Stage 1 : Git Clone") {
             steps {
-                sh '''
-                rm -rf PlateMate
-                git clone https://github.com/AnshAviKhanna/PlateMate.git
-                '''
-                // git credentialsId: 'Ansh-GitHub-Credentials', url: 'https://github.com/AnshAviKhanna/PlateMate.git', branch: 'main'
+                sh 'ls'
             }
         }
+
+//comment
+//cpomment
 
         stage("Stage 2: Backend Testing") {
             steps {
@@ -44,7 +41,7 @@ pipeline {
                 sh '''
                 cd frontend
                 ls
-                /usr/local/bin/docker build -t anshavikhanna/platemate-frontend:latest .
+                docker build -t krp277/platemate-frontend:latest .
                 '''
             }
         }
@@ -53,7 +50,7 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                /usr/local/bin/docker build -t anshavikhanna/platemate-backend:latest .
+                docker build -t krp277/platemate-backend:latest .
                 '''
             }
         }
@@ -61,8 +58,8 @@ pipeline {
         stage("Stage 6: Push Frontend Docker Image") {
             steps {
                 sh '''
-                /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push anshavikhanna/platemate-frontend:latest
+                docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
+                docker push krp277/platemate-frontend:latest
                 '''
             }
         }
@@ -70,8 +67,8 @@ pipeline {
         stage("Stage 7: Push Backend Docker Image") {
             steps {
                 sh '''
-                /usr/local/bin/docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                /usr/local/bin/docker push anshavikhanna/platemate-backend:latest
+                docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
+                docker push krp277/platemate-backend:latest
                 '''
             }
         }
@@ -79,14 +76,10 @@ pipeline {
         stage("Stage 8: Ansible"){
             steps {
                 sh '''
-                echo "$VAULT_PASS" > /tmp/vault_pass.txt
-                chmod 600 /tmp/vault_pass.txt
-                ansible-playbook -i inventory-k8 --vault-password-file /tmp/vault_pass.txt playbook-k8-new.yaml
-                rm -f /tmp/vault_pass.txt
+                ansible-playbook -i inventory-k8 playbook-k8-new.yaml
                 '''
             }
 
         }
-
     }
 }
