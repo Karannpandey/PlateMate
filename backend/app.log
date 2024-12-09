@@ -1,0 +1,18 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is starting...","timestamp":"2024-12-09T10:53:00.155Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port 5001","timestamp":"2024-12-09T10:53:00.193Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"3.061\"}","timestamp":"2024-12-09T10:53:09.901Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"0.518\"}","timestamp":"2024-12-09T10:53:09.905Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"1.944\"}","timestamp":"2024-12-09T10:53:09.919Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.722\"}","timestamp":"2024-12-09T10:53:09.930Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.786\"}","timestamp":"2024-12-09T10:55:34.370Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"0.289\"}","timestamp":"2024-12-09T10:55:34.372Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.549\"}","timestamp":"2024-12-09T10:55:34.377Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.304\"}","timestamp":"2024-12-09T10:55:34.380Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.025\"}","timestamp":"2024-12-09T10:55:38.534Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.155\"}","timestamp":"2024-12-09T10:55:38.537Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.513\"}","timestamp":"2024-12-09T10:55:38.542Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"1.607\"}","timestamp":"2024-12-09T10:55:38.545Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"1.482\"}","timestamp":"2024-12-09T10:58:27.033Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/initialize\",\"status\":\"200\",\"responseTime\":\"0.756\"}","timestamp":"2024-12-09T10:58:27.038Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.380\"}","timestamp":"2024-12-09T10:58:27.045Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/getMealPlan\",\"status\":\"200\",\"responseTime\":\"0.752\"}","timestamp":"2024-12-09T10:58:27.050Z"}

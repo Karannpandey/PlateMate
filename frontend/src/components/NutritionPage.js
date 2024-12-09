@@ -8,8 +8,10 @@ const NutritionPage = ({ userId, onLogout }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const appId='10b0f16c';
-  const apiKey='76203dfb700e4d6f9ca20f226c985512';
+//   const appId='10b0f16c';
+//   const apiKey='76203dfb700e4d6f9ca20f226c985512';
+  const appId=process.env.REACT_APP_API_APP_ID;
+  const apiKey=process.env.REACT_APP_API_KEY;
 
   const handleIngredientChange = (value) => {
     setIngredients(value);
