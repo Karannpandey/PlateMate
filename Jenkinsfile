@@ -76,5 +76,17 @@ pipeline {
             }
         }
 
+        stage("Stage 8: Ansible"){
+            steps {
+                sh '''
+                echo "$VAULT_PASS" > /tmp/vault_pass.txt
+                chmod 600 /tmp/vault_pass.txt
+                ansible-playbook -i inventory-k8 --vault-password-file /tmp/vault_pass.txt playbook-k8-new.yaml
+                rm -f /tmp/vault_pass.txt
+                '''
+            }
+
+        }
+
     }
 }
