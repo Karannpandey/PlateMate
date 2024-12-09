@@ -1,3 +1,0 @@
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/getMealPlan\",\"status\":\"404\",\"responseTime\":\"1.341\"}","timestamp":"2024-12-08T18:20:02.759Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/getMealPlan\",\"status\":\"404\",\"responseTime\":\"1.391\"}","timestamp":"2024-12-08T18:20:02.906Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/getMealPlan\",\"status\":\"404\",\"responseTime\":\"1.056\"}","timestamp":"2024-12-08T18:20:03.033Z"}

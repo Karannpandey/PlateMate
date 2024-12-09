@@ -7,8 +7,9 @@ const path = require('path');
 const MultiArmBandit = require('./models/multiArmBandit');
 const logger = require('./logger.js');
 const morgan = require('morgan');
-// import logger from "./logger.js";
-// import morgan from "morgan";
+
+logger.info("Server is starting...");
+
 
 const morganFormat = ":method :url :status :response-time ms";
 
@@ -134,7 +135,8 @@ if (process.env.NODE_ENV !== 'test') {
   initializeData().then(() => {
     const PORT = 5001;
     // const PORT = 8000;
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.listen(PORT, () => {logger.info("Server is running on port 5001");
+      console.log(`Server running on port ${PORT}`);});
   });
 }
 
