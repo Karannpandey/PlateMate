@@ -76,7 +76,7 @@ pipeline{
         stage("Stage 8: Ansible"){
             steps {
                 sh '''
-                ansible-playbook -i inventory-k8 playbook-k8-new.yaml
+                ansible-playbook -i inventory-k8 playbook-k8.yaml
                 '''
             }
 
