@@ -1,0 +1,15 @@
+- name: Deploying with Kubernetes
+  hosts: all
+  tasks:
+    - name: Show ansible_user
+      debug:
+        msg: "The ansible_user is {{ ansible_user }}"
+
+    - name: Clone the repository
+      git:
+        repo: https://github.com/AnshAviKhanna/PlateMate.git
+        dest: /tmp/PlateMate-k8
+      
+
+    - name: Apply Kubernetes manifests
+      command: kubectl apply -f /tmp/PlateMate-k8/kub
