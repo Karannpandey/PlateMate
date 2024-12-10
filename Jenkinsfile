@@ -3,6 +3,7 @@ pipeline{
         DOCKERHUB_CRED = credentials("DockerKaran")
         REACT_APP_API_KEY = credentials("api_key")
         REACT_APP_API_APP_ID = credentials("api_app_id")
+        VAULT_PASS = credentials("ansible_vault_pass")
     }
     agent any
     stages{
@@ -98,7 +99,10 @@ pipeline{
         stage("Stage 6: Ansible"){
             steps {
                 sh '''
-                ansible-playbook -i inventory-k8 playbook-k8.yaml
+                echo "$VAULT_PASS" > /tmp/vault_pass.txt
+                chmod 600 /tmp/vault_pass.txt
+                ansible-playbook -i inventory-k8 --vault-password-file /tmp/vault_pass.txt playbook-k8.yaml
+                rm -f /tmp/vault_pass.txt
                 '''
             }
 
