@@ -1,12 +1,17 @@
 pipeline{
     environment{
         DOCKERHUB_CRED = credentials("DockerKaran")
+        REACT_APP_API_KEY = credentials("api_key")
+        REACT_APP_API_APP_ID = credentials("api_app_id")
     }
     agent any
     stages{
         stage("Stage 1 : Git Clone") {
             steps {
-                sh 'ls'
+                sh '''
+                rm -rf PlateMate
+                git clone https://github.com/AnshAviKhanna/PlateMate.git
+                '''
             }
         }
 
@@ -36,7 +41,7 @@ pipeline{
         //     }
         // }
 
-        // stage("Stage 4: Creating Docker Image for frontend") {
+        // stage("Stage 4.1: Creating Docker Image for frontend") {
         //     steps {
         //         sh '''
         //         cd frontend
@@ -46,16 +51,15 @@ pipeline{
         //     }
         // }
 
-        // stage("Stage 5: Creating Docker Image for backend") {
-        //     steps {
-        //         sh '''
-        //         cd backend
-        //         docker build -t krp277/platemate-backend:latest .
-        //         '''
+        // stage("Stage 4.2: Scan Frontend Docker Image") {
+        // steps {
+        //     sh '''
+        //     trivy image krp277/platemate-frontend:latest
+        //     '''
         //     }
         // }
 
-        // stage("Stage 6: Push Frontend Docker Image") {
+        // stage("Stage 4.3: Push Frontend Docker Image") {
         //     steps {
         //         sh '''
         //         docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
@@ -64,7 +68,25 @@ pipeline{
         //     }
         // }
 
-        // stage("Stage 7: Push Backend Docker Image") {
+        // stage("Stage 5.1: Creating Docker Image for backend") {
+        //     steps {
+        //         sh '''
+        //         cd backend
+        //         docker build -t krp277/platemate-backend:latest .
+        //         '''
+        //     }
+        // }
+
+        // stage("Stage 5.2: Scan Backend Docker Image") {
+        //     steps {
+        //         sh '''
+        //         trivy image krp277/platemate-backend:latest
+        //         '''
+        //     }
+        // }
+
+
+        // stage("Stage 5.3: Push Backend Docker Image") {
         //     steps {
         //         sh '''
         //         docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
@@ -73,7 +95,7 @@ pipeline{
         //     }
         // }
 
-        stage("Stage 8: Ansible"){
+        stage("Stage 6: Ansible"){
             steps {
                 sh '''
                 ansible-playbook -i inventory-k8 playbook-k8.yaml

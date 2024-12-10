@@ -16,7 +16,7 @@ const MealPage = ({ userId, goal, onLogout }) => {
 
   const initializeMealPlan = async () => {
     try {
-      const response = await fetch('http://192.168.49.2:30007/api/initialize', {
+      const response = await fetch('http://192.168.58.2:30007/api/initialize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, goal }),
@@ -33,7 +33,7 @@ const MealPage = ({ userId, goal, onLogout }) => {
 
 const fetchMealPlan = async () => {
     try {
-      const response = await fetch('http://192.168.49.2:30007/api/getMealPlan', {
+      const response = await fetch('http://192.168.58.2:30007/api/getMealPlan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, goal }),
@@ -49,7 +49,7 @@ const fetchMealPlan = async () => {
 
   const handleRatingSubmit = async (ratings) => {
     try {
-      const response = await fetch('http://192.168.49.2:30007/api/updateRatings', {
+      const response = await fetch('http://192.168.58.2:30007/api/updateRatings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, ratings }),
